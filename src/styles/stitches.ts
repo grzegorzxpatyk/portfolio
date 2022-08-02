@@ -24,29 +24,27 @@ export const { styled, createTheme } = createStitches({
             ...gray,
             ...slate,
             ...slateA,
-            // ...violetA,
-            // ...indigoA,
-            // ...blueA,
-            // ...cyanA,
-            // ...tealA,
+            ...violetA,
+            ...indigoA,
+            ...blueA,
+            ...cyanA,
+            ...tealA,
         },
     },
 });
 
-// export const darkTheme = createTheme({
-//     theme: {
-//         colors: {
-//             ...grayDark,
-//             ...slateDark,
-//             ...slateDarkA,
-//             // ...violetDarkA,
-//             // ...indigoDarkA,
-//             // ...blueDarkA,
-//             // ...cyanDarkA,
-//             // ...tealDarkA,
-//         },
-//     },
-// });
+export const darkTheme = createTheme('dark-theme', {
+    colors: {
+        ...grayDark,
+        ...slateDark,
+        ...slateDarkA,
+        ...violetDarkA,
+        ...indigoDarkA,
+        ...blueDarkA,
+        ...cyanDarkA,
+        ...tealDarkA,
+    },
+});
 
 export const globalStyles = globalCss({
     '@import':
@@ -56,14 +54,18 @@ export const globalStyles = globalCss({
         padding: 0,
         boxSizing: 'border-box',
     },
-    body: {
+    '#App': {
         width: '100vw',
         height: '100vh',
-        background: 'linear-gradient(45deg, black, $blueA9, $violetA10, black)',
+        background: 'linear-gradient(45deg, $blueA9 0%, $violetA9 100%)',
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        color: 'White',
+        color: '$slate12',
         fontFamily: 'Inter, sans-serif',
+        [`&.${darkTheme}`]: {
+            background: '$slate1',
+        },
     },
 });
