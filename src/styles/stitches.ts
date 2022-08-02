@@ -3,46 +3,38 @@ import {
     blueDarkA,
     cyanA,
     cyanDarkA,
-    gray,
-    grayDark,
     indigoA,
     indigoDarkA,
+    skyA,
+    skyDarkA,
     slate,
     slateA,
     slateDark,
     slateDarkA,
-    tealA,
-    tealDarkA,
-    violetA,
-    violetDarkA,
 } from '@radix-ui/colors';
 import { createStitches, globalCss } from '@stitches/react';
 
 export const { styled, createTheme } = createStitches({
     theme: {
         colors: {
-            ...gray,
             ...slate,
             ...slateA,
-            ...violetA,
             ...indigoA,
             ...blueA,
+            ...skyA,
             ...cyanA,
-            ...tealA,
         },
     },
 });
 
 export const darkTheme = createTheme('dark-theme', {
     colors: {
-        ...grayDark,
         ...slateDark,
         ...slateDarkA,
-        ...violetDarkA,
         ...indigoDarkA,
         ...blueDarkA,
+        ...skyDarkA,
         ...cyanDarkA,
-        ...tealDarkA,
     },
 });
 
@@ -57,7 +49,7 @@ export const globalStyles = globalCss({
     '#App': {
         width: '100vw',
         height: '100vh',
-        background: 'linear-gradient(45deg, $blueA9 0%, $violetA9 100%)',
+        background: 'linear-gradient(45deg, $indigoA8 0%, $cyanA8 100%)',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
