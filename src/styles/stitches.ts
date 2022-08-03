@@ -47,13 +47,12 @@ export const globalStyles = globalCss({
         boxSizing: 'border-box',
     },
     '#App': {
-        width: '100vw',
         height: '100vh',
-        background: 'linear-gradient(45deg, $indigoA8 0%, $cyanA8 100%)',
         display: 'flex',
-        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        flexDirection: 'column',
+        background: 'linear-gradient(45deg, $indigoA8 0%, $cyanA8 100%)',
         color: '$slate12',
         fontFamily: 'Inter, sans-serif',
         [`&.${darkTheme}`]: {
