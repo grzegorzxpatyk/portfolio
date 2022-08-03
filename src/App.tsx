@@ -4,11 +4,35 @@ import Header from './components/Header';
 import Navbar from './components/Navbar';
 import { darkTheme, globalStyles, styled } from './styles/stitches';
 import { Separator } from './components/Separator';
-import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
+import {
+    Cross1Icon,
+    EnvelopeClosedIcon,
+    GitHubLogoIcon,
+    Half2Icon,
+    LinkedInLogoIcon,
+} from '@radix-ui/react-icons';
 
 const FlexContainer = styled('div', {
     display: 'flex',
     justifyContent: 'start',
+    alignItems: 'center',
+    flexDirection: 'row',
+});
+
+const InlineFlexContainer = styled('span', {
+    display: 'inline-flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexDirection: 'row',
+});
+
+const Logo = styled('h1', {
+    fontFamily: '"JetBrains Mono", monospace',
+    fontSize: 'max(2rem, 5vmin)',
+    margin: '1vmin',
+    width: '16vw',
+    display: 'flex',
+    justifyContent: 'space-around',
     alignItems: 'center',
     flexDirection: 'row',
 });
@@ -24,7 +48,9 @@ function App() {
     return (
         <div id="App" className={isUsingDarkTheme ? darkTheme : ''}>
             <Header>
-                <h1>portfolio</h1>
+                <Logo>
+                    greg <Cross1Icon /> patyk
+                </Logo>
                 <Navbar>
                     <ul>
                         <li>Home</li>
@@ -34,7 +60,7 @@ function App() {
                     </ul>
                 </Navbar>
                 <Button onClick={switchTheme} css={{ padding: '.6rem' }}>
-                    {isUsingDarkTheme ? <SunIcon /> : <MoonIcon />}
+                    <Half2Icon />
                 </Button>
             </Header>
             <main
@@ -56,19 +82,30 @@ function App() {
                     </p>
                     <Separator css={{ margin: '15px 0' }} />
                     <FlexContainer css={{ height: '20px' }}>
-                        Github{' '}
+                        <InlineFlexContainer>
+                            <GitHubLogoIcon />{' '}
+                            <span style={{ marginLeft: '.5rem' }}>Github</span>
+                        </InlineFlexContainer>
                         <Separator
                             decorative
                             orientation="vertical"
                             css={{ margin: '0 15px' }}
                         />
-                        LinkedIN
+                        <InlineFlexContainer>
+                            <LinkedInLogoIcon />
+                            <span style={{ marginLeft: '.5rem' }}>
+                                LinkedIN
+                            </span>
+                        </InlineFlexContainer>
                         <Separator
                             decorative
                             orientation="vertical"
                             css={{ margin: '0 15px' }}
                         />
-                        Contact
+                        <InlineFlexContainer>
+                            <EnvelopeClosedIcon />{' '}
+                            <span style={{ marginLeft: '.5rem' }}>Contact</span>
+                        </InlineFlexContainer>
                     </FlexContainer>
                 </section>
             </main>
