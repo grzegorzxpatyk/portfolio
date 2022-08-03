@@ -22,10 +22,10 @@ const Button = styled('button', {
     variants: {
         variant: {
             default: {
-                background: '$slate5',
+                background: '$slate6',
                 color: '$slate12',
                 '&:hover': {
-                    background: '$slate7',
+                    background: '$slate8',
                 },
             },
             outlined: {
