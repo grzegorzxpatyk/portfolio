@@ -31,6 +31,7 @@ const Logo = styled('h1', {
     fontSize: 'max(2rem, 5vmin)',
     margin: '1vmin',
     width: '16vw',
+    minWidth: 'fit-content',
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
@@ -49,7 +50,7 @@ function App() {
         <div id="App" className={isUsingDarkTheme ? darkTheme : ''}>
             <Header>
                 <Logo>
-                    greg <Cross1Icon /> patyk
+                    greg <Cross1Icon style={{ margin: '0 .5rem' }} /> patyk
                 </Logo>
                 <Navbar>
                     <ul>
