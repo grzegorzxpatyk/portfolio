@@ -40,7 +40,7 @@ export const darkTheme = createTheme('dark-theme', {
 
 export const globalStyles = globalCss({
     '@import':
-        "url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap')",
+        "url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap&family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap'')",
     '*': {
         margin: 0,
         padding: 0,
