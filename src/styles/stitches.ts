@@ -50,11 +50,8 @@ export const globalStyles = globalCss({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        background: 'linear-gradient(45deg, $indigoA8 0%, $cyanA8 100%)',
+        background: '$slate1',
         color: '$slate12',
         fontFamily: 'Inter, sans-serif',
-        [`&.${darkTheme}`]: {
-            background: '$slate1',
-        },
     },
 });
