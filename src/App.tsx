@@ -4,89 +4,15 @@ import Header from './components/Header';
 import Navbar from './components/Navbar';
 import { darkTheme, globalStyles, styled } from './styles/stitches';
 import { Separator } from './components/Separator';
+import FlexContainer from './components/FlexContainer';
 import {
     EnvelopeClosedIcon,
     GitHubLogoIcon,
     Half2Icon,
     LinkedInLogoIcon,
 } from '@radix-ui/react-icons';
-
-const FlexContainer = styled('div', {
-    display: 'flex',
-    variants: {
-        justifyContent: {
-            start: {
-                justifyContent: 'start',
-            },
-            center: {
-                justifyContent: 'center',
-            },
-            end: {
-                justifyContent: 'end',
-            },
-            between: {
-                justifyContent: 'space-between',
-            },
-        },
-        alignItems: {
-            start: {
-                alignItems: 'start',
-            },
-            center: {
-                alignItems: 'center',
-            },
-            end: {
-                alignItems: 'end',
-            },
-        },
-        flexDirection: {
-            row: {
-                flexDirection: 'row',
-            },
-            column: {
-                flexDirection: 'column',
-            },
-        },
-    },
-
-    defaultVariants: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'row',
-    },
-});
-
-const InlineFlexContainer = styled('span', {
-    display: 'inline-flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flexDirection: 'row',
-});
-
-const Logo = styled('h1', {
-    fontFamily: '"JetBrains Mono", monospace',
-    fontSize: 'max(2rem, 5vmin)',
-    margin: '1vmin',
-    width: '16vw',
-    minWidth: 'fit-content',
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    flexDirection: 'row',
-});
-
-const NameHeading = styled('h1', {
-    fontSize: '1.2rem',
-    fontWeight: 500,
-    lineHeight: 1.5,
-    marginBottom: '1rem',
-});
-
-const ShortBioHeading = styled('h2', {
-    fontSize: '1rem',
-    fontWeight: 400,
-    lineHeight: 1.5,
-});
+import NameHeading from './components/NameHeading';
+import BioHeading from './components/BioHeading';
 
 function App() {
     globalStyles();
@@ -147,10 +73,10 @@ function App() {
             >
                 <section>
                     <NameHeading>Grzegorz Patyk</NameHeading>
-                    <ShortBioHeading>
+                    <BioHeading>
                         I'm Greg - software engineer based in Cracow. I am
                         interested in UI development, design and 3D modeling.
-                    </ShortBioHeading>
+                    </BioHeading>
                     <p style={{ margin: '1rem 0', lineHeight: 1.5 }}>
                         I am currently working at TTMS, providing clients with
                         best frontend solutions, but I am open for a freelance
@@ -161,30 +87,38 @@ function App() {
                         css={{ height: '20px' }}
                         justifyContent="start"
                     >
-                        <InlineFlexContainer>
-                            <GitHubLogoIcon />{' '}
-                            <span style={{ marginLeft: '.5rem' }}>Github</span>
-                        </InlineFlexContainer>
+                        <a
+                            href={process.env.REACT_APP_GITHUB_LINK}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <FlexContainer>
+                                <GitHubLogoIcon />
+                                <span style={{ marginLeft: '.5rem' }}>
+                                    Github
+                                </span>
+                            </FlexContainer>
+                        </a>
                         <Separator
                             decorative
                             orientation="vertical"
                             css={{ margin: '0 15px' }}
                         />
-                        <InlineFlexContainer>
+                        <FlexContainer>
                             <LinkedInLogoIcon />
                             <span style={{ marginLeft: '.5rem' }}>
                                 LinkedIN
                             </span>
-                        </InlineFlexContainer>
+                        </FlexContainer>
                         <Separator
                             decorative
                             orientation="vertical"
                             css={{ margin: '0 15px' }}
                         />
-                        <InlineFlexContainer>
-                            <EnvelopeClosedIcon />{' '}
+                        <FlexContainer>
+                            <EnvelopeClosedIcon />
                             <span style={{ marginLeft: '.5rem' }}>Contact</span>
-                        </InlineFlexContainer>
+                        </FlexContainer>
                     </FlexContainer>
                 </section>
             </main>
