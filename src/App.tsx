@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import Button from './components/Button';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
@@ -96,6 +96,24 @@ function App() {
         setIsUsingDarkTheme(!isUsingDarkTheme);
     }
 
+    const darkModePreference = window.matchMedia(
+        '(prefers-color-scheme: dark)'
+    ).matches;
+
+    useLayoutEffect(() => {
+        if (darkModePreference) {
+            setIsUsingDarkTheme(true);
+        }
+    }, []);
+
+    useEffect(() => {
+        window
+            .matchMedia('(prefers-color-scheme: dark)')
+            .addEventListener('change', (event) => {
+                setIsUsingDarkTheme(event.matches);
+            });
+    }, []);
+
     return (
         <div id="App" className={isUsingDarkTheme ? darkTheme : ''}>
             <Header>
@@ -105,9 +123,6 @@ function App() {
                     alignItems="center"
                     flexDirection="row"
                 >
-                    {/* <Logo>
-                        greg <Cross1Icon style={{ margin: '0 .5rem' }} /> patyk
-                    </Logo> */}
                     <Navbar>
                         <ul>
                             <li>Home</li>
