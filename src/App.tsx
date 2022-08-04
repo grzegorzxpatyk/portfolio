@@ -13,6 +13,7 @@ import {
 } from '@radix-ui/react-icons';
 import NameHeading from './components/NameHeading';
 import BioHeading from './components/BioHeading';
+import Link from './components/Link';
 
 function App() {
     globalStyles();
@@ -78,16 +79,24 @@ function App() {
                         interested in UI development, design and 3D modeling.
                     </BioHeading>
                     <p style={{ margin: '1rem 0', lineHeight: 1.5 }}>
-                        I am currently working at TTMS, providing clients with
-                        best frontend solutions, but I am open for a freelance
-                        work. Need a hand? Just hit me up 😉
+                        I am currently working at{' '}
+                        <Link
+                            href="https://ttms.pl/en/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            TTMS
+                        </Link>
+                        , providing clients with best frontend solutions, but I
+                        am open for a freelance work. Need a hand? Just hit me
+                        up 😉
                     </p>
                     <Separator css={{ margin: '15px 0' }} />
                     <FlexContainer
                         css={{ height: '20px' }}
                         justifyContent="start"
                     >
-                        <a
+                        <Link
                             href={process.env.REACT_APP_GITHUB_LINK}
                             target="_blank"
                             rel="noreferrer"
@@ -98,27 +107,37 @@ function App() {
                                     Github
                                 </span>
                             </FlexContainer>
-                        </a>
+                        </Link>
                         <Separator
                             decorative
                             orientation="vertical"
                             css={{ margin: '0 15px' }}
                         />
-                        <FlexContainer>
-                            <LinkedInLogoIcon />
-                            <span style={{ marginLeft: '.5rem' }}>
-                                LinkedIN
-                            </span>
-                        </FlexContainer>
+                        <Link
+                            href={process.env.REACT_APP_LINKEDIN_LINK}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <FlexContainer>
+                                <LinkedInLogoIcon />
+                                <span style={{ marginLeft: '.5rem' }}>
+                                    LinkedIn
+                                </span>
+                            </FlexContainer>
+                        </Link>
                         <Separator
                             decorative
                             orientation="vertical"
                             css={{ margin: '0 15px' }}
                         />
-                        <FlexContainer>
-                            <EnvelopeClosedIcon />
-                            <span style={{ marginLeft: '.5rem' }}>Contact</span>
-                        </FlexContainer>
+                        <Link href={'mailto:' + process.env.REACT_APP_MY_EMAIL}>
+                            <FlexContainer>
+                                <EnvelopeClosedIcon />
+                                <span style={{ marginLeft: '.5rem' }}>
+                                    Contact
+                                </span>
+                            </FlexContainer>
+                        </Link>
                     </FlexContainer>
                 </section>
             </main>
