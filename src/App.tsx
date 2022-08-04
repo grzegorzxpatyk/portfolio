@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import { darkTheme, globalStyles, styled } from './styles/stitches';
 import { Separator } from './components/Separator';
 import {
-    Cross1Icon,
     EnvelopeClosedIcon,
     GitHubLogoIcon,
     Half2Icon,
@@ -14,9 +13,47 @@ import {
 
 const FlexContainer = styled('div', {
     display: 'flex',
-    justifyContent: 'start',
-    alignItems: 'center',
-    flexDirection: 'row',
+    variants: {
+        justifyContent: {
+            start: {
+                justifyContent: 'start',
+            },
+            center: {
+                justifyContent: 'center',
+            },
+            end: {
+                justifyContent: 'end',
+            },
+            between: {
+                justifyContent: 'space-between',
+            },
+        },
+        alignItems: {
+            start: {
+                alignItems: 'start',
+            },
+            center: {
+                alignItems: 'center',
+            },
+            end: {
+                alignItems: 'end',
+            },
+        },
+        flexDirection: {
+            row: {
+                flexDirection: 'row',
+            },
+            column: {
+                flexDirection: 'column',
+            },
+        },
+    },
+
+    defaultVariants: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+    },
 });
 
 const InlineFlexContainer = styled('span', {
@@ -38,6 +75,19 @@ const Logo = styled('h1', {
     flexDirection: 'row',
 });
 
+const NameHeading = styled('h1', {
+    fontSize: '1.2rem',
+    fontWeight: 500,
+    lineHeight: 1.5,
+    marginBottom: '1rem',
+});
+
+const ShortBioHeading = styled('h2', {
+    fontSize: '1rem',
+    fontWeight: 400,
+    lineHeight: 1.5,
+});
+
 function App() {
     globalStyles();
     const [isUsingDarkTheme, setIsUsingDarkTheme] = useState(false);
@@ -49,20 +99,27 @@ function App() {
     return (
         <div id="App" className={isUsingDarkTheme ? darkTheme : ''}>
             <Header>
-                <Logo>
-                    greg <Cross1Icon style={{ margin: '0 .5rem' }} /> patyk
-                </Logo>
-                <Navbar>
-                    <ul>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Blog</li>
-                        <li>Contact</li>
-                    </ul>
-                </Navbar>
-                <Button onClick={switchTheme} css={{ padding: '.6rem' }}>
-                    <Half2Icon />
-                </Button>
+                <FlexContainer
+                    css={{ width: '50%' }}
+                    justifyContent="between"
+                    alignItems="center"
+                    flexDirection="row"
+                >
+                    {/* <Logo>
+                        greg <Cross1Icon style={{ margin: '0 .5rem' }} /> patyk
+                    </Logo> */}
+                    <Navbar>
+                        <ul>
+                            <li>Home</li>
+                            <li>About</li>
+                            <li>Blog</li>
+                            <li>Contact</li>
+                        </ul>
+                    </Navbar>
+                    <Button onClick={switchTheme} css={{ padding: '.6rem' }}>
+                        <Half2Icon />
+                    </Button>
+                </FlexContainer>
             </Header>
             <main
                 style={{
@@ -74,15 +131,21 @@ function App() {
                 }}
             >
                 <section>
-                    <h2 style={{ margin: '.5rem 0' }}>
-                        Welcome to my portfolio!
-                    </h2>
-                    <p>
-                        I'm Greg - a software engineer from Poland. Nice to meet
-                        you!
+                    <NameHeading>Grzegorz Patyk</NameHeading>
+                    <ShortBioHeading>
+                        I'm Greg - software engineer based in Cracow. I am
+                        interested in UI development, design and 3D modeling.
+                    </ShortBioHeading>
+                    <p style={{ margin: '1rem 0', lineHeight: 1.5 }}>
+                        I am currently working at TTMS, providing clients with
+                        best frontend solutions, but I am open for a freelance
+                        work. Need a hand? Just hit me up 😉
                     </p>
                     <Separator css={{ margin: '15px 0' }} />
-                    <FlexContainer css={{ height: '20px' }}>
+                    <FlexContainer
+                        css={{ height: '20px' }}
+                        justifyContent="start"
+                    >
                         <InlineFlexContainer>
                             <GitHubLogoIcon />{' '}
                             <span style={{ marginLeft: '.5rem' }}>Github</span>

@@ -10,6 +10,12 @@ const Navbar = styled('nav', {
         alignItems: 'center',
         '& li': {
             margin: '0 1rem',
+            '&:first-of-type': {
+                margin: '0 1rem 0 0',
+            },
+            '&:last-of-type': {
+                margin: '0 0 0 1rem',
+            },
         },
     },
 });
