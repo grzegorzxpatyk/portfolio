@@ -15,7 +15,7 @@ const Button = styled('button', {
         transform: 'translate(0, 2px) scale(0.95)',
     },
     '&:focus': {
-        outline: '3px solid $blueA10',
+        outline: '3px solid $blueA9',
         boxShadow: '0 0 15px $colors$blueA9',
     },
 
