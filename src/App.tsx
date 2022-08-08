@@ -2,7 +2,7 @@ import React, { useEffect, useLayoutEffect, useState } from 'react';
 import Button from './components/Button';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
-import { darkTheme, globalStyles, styled } from './styles/stitches';
+import { darkTheme, globalStyles } from './styles/stitches';
 import { Separator } from './components/Separator';
 import FlexContainer from './components/FlexContainer';
 import {
@@ -75,7 +75,7 @@ function App() {
                 <section>
                     <NameHeading>Grzegorz Patyk</NameHeading>
                     <BioHeading>
-                        I'm Greg - software engineer based in Cracow. I am
+                        Hi! I'm Greg - software engineer based in Cracow. I am
                         interested in UI development, design and 3D modeling.
                     </BioHeading>
                     <p style={{ margin: '1rem 0', lineHeight: 1.5 }}>
