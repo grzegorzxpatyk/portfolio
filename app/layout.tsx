@@ -19,7 +19,7 @@ export default function RootLayout({
     return (
         <html lang='en'>
             <body className={`${GeistSans.className} antialiased mx-auto max-w-2xl`}>
-                <main className='flex min-h-screen flex-col items-center justify-start p-8 min-w-0'>
+                <main className='flex min-h-screen flex-col items-center justify-start mt-2 lg:mt-8 p-8 min-w-0'>
                     <Navigation />
                     {children}
                 </main>
