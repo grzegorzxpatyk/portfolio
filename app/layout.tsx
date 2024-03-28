@@ -21,7 +21,7 @@ export default function RootLayout({
     return (
         <html lang='en'>
             <body className={`${inter.className} antialiased`}>
-                <main className='flex min-h-screen flex-col items-center justify-start py-6 px-80'>
+                <main className='flex min-h-screen flex-col items-center justify-start p-8 md:py-6 md:px-80'>
                     <Navigation />
                     {children}
                 </main>
