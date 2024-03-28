@@ -21,8 +21,8 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='en'>
-            <body className={`${GeistSans.className} antialiased`}>
-                <main className='flex min-h-screen flex-col items-center justify-start p-8 md:py-6 md:px-80'>
+            <body className={`${GeistSans.className} antialiased mx-auto max-w-2xl`}>
+                <main className='flex min-h-screen flex-col items-center justify-start p-8 min-w-0'>
                     <Navigation />
                     {children}
                 </main>
