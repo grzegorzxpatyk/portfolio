@@ -2,11 +2,11 @@ export default function Home() {
     return (
         <section className='w-full flex justify-start items-center'>
             <article>
-                <h1 className='text-2xl mb-8'>
+                <h1 className='text-2xl text-white mb-8'>
                     Hi! my name is Greg and{' '}
                     <strong>this is my portfolio</strong> {';)'}
                 </h1>
-                <p className='text-base text-justify'>
+                <p className='text-base text-justify text-zinc-300'>
                     I am dedicated and innovative Frontend Developer with a
                     unique blend of skills derived from a background in
                     architecture and passion for programming. Divergent thinker,

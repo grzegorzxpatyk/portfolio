@@ -18,10 +18,10 @@ export default function Navigation() {
                 <Link
                     href={link.href}
                     key={link.name}
-                    className={`px-2 py-0 lowercase text-base rounded ${
+                    className={`px-2 py-0 lowercase text-lg transition-colors border-zinc-700 hover:text-zinc-100 rounded ${
                         pathname === link.href
-                            ? 'bg-zinc-800'
-                            : 'bg-transparent'
+                            ? 'bg-zinc-900 border text-zinc-100'
+                            : 'bg-transparent border-none text-zinc-300'
                     }`}
                 >
                     {link.name}
