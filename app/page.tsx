@@ -1,4 +1,8 @@
-import { ArrowTopRightIcon } from '@radix-ui/react-icons';
+import {
+    ArrowTopRightIcon,
+    GitHubLogoIcon,
+    LinkedInLogoIcon,
+} from '@radix-ui/react-icons';
 import Link from 'next/link';
 
 export default function Home() {
@@ -14,12 +18,37 @@ export default function Home() {
                 nature, and spending time with my dogs.
             </p>
 
-            <p className='mt-16'>
-                Interested in hiring me? Checkout my{' '}
-                <Link href='https://grzegorzxpatyk.github.io/resume/' target='_blank' className='inline-flex justify-between items-center underline underline-offset-2 hover:text-zinc-600 dark:hover:text-zinc-100'>
+            <p className='mt-24'>
+                <h3 className='inline text-lg'>Interested in hiring me?</h3>{' '}
+                Checkout my{' '}
+                <Link
+                    href='https://grzegorzxpatyk.github.io/resume/'
+                    target='_blank'
+                    className='inline-flex justify-between items-center underline underline-offset-2 hover:text-zinc-600 dark:hover:text-zinc-100'
+                >
                     printable Resume
                     <ArrowTopRightIcon />
                 </Link>
+            </p>
+
+            <p className='mt-8'>
+                <h3>You can also find me on</h3>
+                <div className='flex sm:flex-row sm:justify-between sm:items-center flex-col justify-start items-start mt-2'>
+                    <Link
+                        href='https://github.com/grzegorzxpatyk'
+                        target='_blank'
+                        className='flex justify-between items-center gap-2 hover:text-zinc-600 dark:hover:text-zinc-100'
+                    >
+                        <GitHubLogoIcon /> GitHub
+                    </Link>
+                    <Link
+                        href='https://www.linkedin.com/in/grzegorz-patyk'
+                        target='_blank'
+                        className='flex justify-between items-center gap-2 hover:text-zinc-600 dark:hover:text-zinc-100'
+                    >
+                        <LinkedInLogoIcon /> Linkedin
+                    </Link>
+                </div>
             </p>
         </section>
     );
