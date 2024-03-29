@@ -14,7 +14,7 @@ export default function LinkButton({
         <Link
             href={href}
             className={
-                'py-1 px-2 my-2 text-base text-zinc-200 bg-zinc-900 border border-zinc-700 rounded inline-flex justify-center items-center' +
+                'py-1 px-2 my-2 text-base text-zinc-900 dark:text-zinc-200 bg-zinc-50 dark:bg-zinc-900 border border-zinc-400 dark:border-zinc-700 rounded inline-flex justify-center items-center' +
                 (className ? ` ${className}` : '')
             }
         >
