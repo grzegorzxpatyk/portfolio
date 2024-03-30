@@ -18,7 +18,7 @@ export default function Home() {
                 nature, and spending time with my dogs.
             </p>
 
-            <p className='mt-24'>
+            <div className='mt-24'>
                 <h3 className='inline text-lg'>Interested in hiring me?</h3>{' '}
                 Checkout my{' '}
                 <Link
@@ -29,9 +29,9 @@ export default function Home() {
                     printable Resume
                     <ArrowTopRightIcon />
                 </Link>
-            </p>
+            </div>
 
-            <p className='mt-8'>
+            <div className='mt-8'>
                 <h3>You can also find me on</h3>
                 <div className='flex sm:flex-row sm:justify-between sm:items-center flex-col justify-start items-start mt-2'>
                     <Link
@@ -49,7 +49,7 @@ export default function Home() {
                         <LinkedInLogoIcon /> Linkedin
                     </Link>
                 </div>
-            </p>
+            </div>
         </section>
     );
 }
