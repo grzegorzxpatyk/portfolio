@@ -44,7 +44,7 @@ export default async function Page() {
                             {el.name}
                             <ArrowTopRightIcon />
                         </Link>
-                        <span className='text-zinc-500 text-sm hidden sm:block'>
+                        <span className='text-zinc-500 text-sm block'>
                             {' '}
                             {el.description}
                         </span>
