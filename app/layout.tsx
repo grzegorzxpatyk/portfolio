@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     template: '%s | Grzegorz Patyk',
   },
     description: 'Portfolio of my web development projects and photography.',
+    authors: { name: 'Grzegorz Patyk', url: 'https://gpatyk.dev'},
 };
 
 export default function RootLayout({
