@@ -9,7 +9,7 @@ export default function Home() {
     return (
         <section className='w-full flex flex-col justify-start items-start'>
             <h1 className='inline text-3xl text-black dark:text-white mb-8'>
-                Hello there! I am Greg 👋
+                Hello there! <span className='whitespace-nowrap'>I am Greg 👋</span>
             </h1>
             <p className='text-base text-justify'>
                 a trained architect turned programmer. I specialize in crafting
