@@ -5,6 +5,7 @@ import {
 } from '@radix-ui/react-icons';
 import Link from 'next/link';
 import Image from 'next/image';
+import Avatar from './lib/avatar.png';
 
 export default function Home() {
     return (
@@ -14,13 +15,14 @@ export default function Home() {
                     Hello there!{' '}
                     <span className='whitespace-nowrap'>I am Greg 👋</span>
                 </h1>
-                <Image
-                    src='/avatar.png'
-                    width={200}
-                    height={200}
-                    alt='My portrait.'
-                    className='hidden sm:block rounded-lg sm:row-span-2'
-                />
+                    <Image
+                        src={Avatar}
+                        width={200}
+                        height={200}
+                        alt='My portrait.'
+                        className='hidden sm:block rounded-lg sm:row-span-2'
+                        placeholder='blur'
+                    />
                 <p className='text-base text-justify sm:col-span-2'>
                     a trained architect turned programmer. I specialize in
                     crafting user interfaces and implementing designs that
