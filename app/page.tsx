@@ -6,6 +6,7 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 import Avatar from './lib/avatar.png';
+import LinkStyled from './ui/linkStyled';
 
 export default function Home() {
     return (
@@ -36,34 +37,30 @@ export default function Home() {
                 <h2 className='inline text-lg'>Interested in hiring me?</h2>{' '}
                 <span className='whitespace-nowrap'>
                     Checkout my{' '}
-                    <Link
+                    <LinkStyled
                         href='https://grzegorzxpatyk.github.io/resume/'
                         target='_blank'
-                        className='inline-flex justify-between items-center underline underline-offset-2 hover:text-zinc-600 dark:hover:text-zinc-100'
                     >
-                        printable Resume
-                        <ArrowTopRightIcon />
-                    </Link>
+                        resume
+                    </LinkStyled>
                 </span>
             </div>
 
             <div className='mt-8'>
                 <h3>You can also find me on</h3>
-                <div className='flex sm:flex-row sm:justify-between sm:items-center flex-col justify-start items-start mt-2'>
-                    <Link
+                <div className='flex gap-1 sm:gap-4 sm:flex-row sm:justify-between sm:items-center flex-col justify-start items-start mt-2'>
+                    <LinkStyled
                         href='https://github.com/grzegorzxpatyk'
                         target='_blank'
-                        className='flex justify-between items-center gap-2 hover:text-zinc-600 dark:hover:text-zinc-100'
                     >
-                        <GitHubLogoIcon /> GitHub
-                    </Link>
-                    <Link
+                        <GitHubLogoIcon className='mr-1' /> GitHub
+                    </LinkStyled>
+                    <LinkStyled
                         href='https://www.linkedin.com/in/grzegorz-patyk'
                         target='_blank'
-                        className='flex justify-between items-center gap-2 hover:text-zinc-600 dark:hover:text-zinc-100'
                     >
-                        <LinkedInLogoIcon /> Linkedin
-                    </Link>
+                        <LinkedInLogoIcon className='mr-1' /> Linkedin
+                    </LinkStyled>
                 </div>
             </div>
         </section>

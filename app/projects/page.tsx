@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
-import { ArrowTopRightIcon } from '@radix-ui/react-icons';
+import LinkStyled from '../ui/linkStyled';
 
 export const metadata: Metadata = {
     title: 'Projects',
@@ -36,14 +35,15 @@ export default async function Page() {
 
     return (
         <section className='w-full flex flex-col items-start'>
-            <h2 className='text-2xl text-black dark:text-white mb-4'>my projects</h2>
+            <h2 className='text-2xl text-black dark:text-white mb-4'>
+                my projects
+            </h2>
             <ul className='flex flex-col justify-evenly items-start'>
                 {selectedRepos.map((el) => (
                     <li className='mb-1' key={el.name}>
-                        <Link href={el.html_url} target='_blank' className='inline-flex justify-between items-center hover:text-zinc-600 dark:hover:text-zinc-100'>
+                        <LinkStyled href={el.html_url} target='_blank'>
                             {el.name}
-                            <ArrowTopRightIcon />
-                        </Link>
+                        </LinkStyled>
                         <span className='text-zinc-500 text-sm block'>
                             {' '}
                             {el.description}
