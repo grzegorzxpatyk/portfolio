@@ -15,14 +15,14 @@ export default function Home() {
                     Hello there!{' '}
                     <span className='whitespace-nowrap'>I am Greg 👋</span>
                 </h1>
-                    <Image
-                        src={Avatar}
-                        width={200}
-                        height={200}
-                        alt='My portrait.'
-                        className='hidden sm:block rounded-lg sm:row-span-2'
-                        placeholder='blur'
-                    />
+                <Image
+                    src={Avatar}
+                    width={200}
+                    height={200}
+                    alt='My portrait.'
+                    className='hidden sm:block rounded-lg sm:row-span-2'
+                    placeholder='blur'
+                />
                 <p className='text-base text-justify sm:col-span-2'>
                     a trained architect turned programmer. I specialize in
                     crafting user interfaces and implementing designs that
