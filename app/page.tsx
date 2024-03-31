@@ -4,7 +4,6 @@ import {
     LinkedInLogoIcon,
 } from '@radix-ui/react-icons';
 import Link from 'next/link';
-import Avatar from './ui/avatar';
 import Image from 'next/image';
 
 export default function Home() {
