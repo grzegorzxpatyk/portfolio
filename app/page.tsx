@@ -4,19 +4,32 @@ import {
     LinkedInLogoIcon,
 } from '@radix-ui/react-icons';
 import Link from 'next/link';
+import Avatar from './ui/avatar';
+import Image from 'next/image';
 
 export default function Home() {
     return (
         <section className='w-full flex flex-col justify-start items-start'>
-            <h1 className='inline text-3xl text-black dark:text-white mb-8'>
-                Hello there! <span className='whitespace-nowrap'>I am Greg 👋</span>
-            </h1>
-            <p className='text-base text-justify'>
-                a trained architect turned programmer. I specialize in crafting
-                user interfaces and implementing designs that enhance web
-                experiences. Outside of work, I enjoy woodworking, exploring
-                nature, and spending time with my dogs.
-            </p>
+            <div className='flex flex-col sm:grid gap-8 sm:grid-cols-3'>
+                <h1 className='text-3xl text-black dark:text-white sm:col-span-2'>
+                    Hello there!{' '}
+                    <span className='whitespace-nowrap'>I am Greg 👋</span>
+                </h1>
+                <Image
+                    src='/avatar.png'
+                    width={200}
+                    height={200}
+                    alt='My portrait.'
+                    className='hidden sm:block rounded-lg sm:row-span-2'
+                />
+                <p className='text-base text-justify sm:col-span-2'>
+                    a trained architect turned programmer. I specialize in
+                    crafting user interfaces and implementing designs that
+                    enhance web experiences. Outside of work, I enjoy
+                    woodworking, exploring nature, and spending time with my
+                    dogs.
+                </p>
+            </div>
 
             <div className='mt-24'>
                 <h3 className='inline text-lg'>Interested in hiring me?</h3>{' '}
