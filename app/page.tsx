@@ -33,16 +33,18 @@ export default function Home() {
             </div>
 
             <div className='mt-24'>
-                <h3 className='inline text-lg'>Interested in hiring me?</h3>{' '}
-                Checkout my{' '}
-                <Link
-                    href='https://grzegorzxpatyk.github.io/resume/'
-                    target='_blank'
-                    className='inline-flex justify-between items-center underline underline-offset-2 hover:text-zinc-600 dark:hover:text-zinc-100'
-                >
-                    printable Resume
-                    <ArrowTopRightIcon />
-                </Link>
+                <h2 className='inline text-lg'>Interested in hiring me?</h2>{' '}
+                <span className='whitespace-nowrap'>
+                    Checkout my{' '}
+                    <Link
+                        href='https://grzegorzxpatyk.github.io/resume/'
+                        target='_blank'
+                        className='inline-flex justify-between items-center underline underline-offset-2 hover:text-zinc-600 dark:hover:text-zinc-100'
+                    >
+                        printable Resume
+                        <ArrowTopRightIcon />
+                    </Link>
+                </span>
             </div>
 
             <div className='mt-8'>
