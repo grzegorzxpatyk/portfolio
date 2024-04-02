@@ -1,9 +1,4 @@
-import {
-    ArrowTopRightIcon,
-    GitHubLogoIcon,
-    LinkedInLogoIcon,
-} from '@radix-ui/react-icons';
-import Link from 'next/link';
+import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
 import Image from 'next/image';
 import Avatar from './lib/avatar.png';
 import LinkStyled from './ui/linkStyled';
