@@ -50,7 +50,7 @@ export default function Avatar() {
             width={200}
             height={200}
             alt='My portrait.'
-            className='hidden sm:block relative rounded-lg sm:row-span-2 transition-all duration-500 ease-in-out hover:transition-transform hover:duration-100 hover:ease-linear'
+            className='sm:row-span-2 rounded-lg transition-all duration-500 ease-in-out hover:transition-transform hover:duration-100 hover:ease-linear'
             placeholder='blur'
             onMouseMove={handleMouseMove}
             onMouseOut={handleMouseOut}

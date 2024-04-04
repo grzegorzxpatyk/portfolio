@@ -5,8 +5,8 @@ import Avatar from './ui/avatar';
 export default function Home() {
     return (
         <section className='w-full flex flex-col justify-start items-start'>
-            <div className='flex flex-col sm:grid gap-8 sm:grid-cols-3'>
-                <h1 className='text-3xl text-black dark:text-white sm:col-span-2'>
+            <div className='grid gap-8 sm:grid-cols-3'>
+                <h1 className='text-3xl text-black dark:text-white sm:col-span-2 row-start-2 sm:row-start-1'>
                     Hello there!{' '}
                     <span className='whitespace-nowrap'>I am Greg 👋</span>
                 </h1>
@@ -20,7 +20,7 @@ export default function Home() {
                 </p>
             </div>
 
-            <div className='mt-24'>
+            <div className='mt-16 sm:mt-24'>
                 <h2 className='inline text-lg'>Interested in hiring me?</h2>{' '}
                 <span className='whitespace-nowrap'>
                     Checkout my{' '}
@@ -33,7 +33,7 @@ export default function Home() {
                 </span>
             </div>
 
-            <div className='mt-8'>
+            <div className='my-8'>
                 <h3>You can also find me on</h3>
                 <div className='flex gap-1 sm:gap-4 sm:flex-row sm:justify-between sm:items-center flex-col justify-start items-start mt-2'>
                     <LinkStyled
