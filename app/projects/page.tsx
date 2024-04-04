@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default async function Page() {
     return (
         <section className='w-full flex flex-col items-start'>
-            <h2 className='text-2xl text-black dark:text-white mb-4'>
+            <h2 className='text-3xl text-black dark:text-white mb-4'>
                 my projects
             </h2>
             <Suspense fallback={<ProjectsSkeleton />}>
