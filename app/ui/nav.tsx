@@ -18,7 +18,7 @@ export default function Navigation() {
                 <Link
                     href={link.href}
                     key={link.name}
-                    className={`box-content p-0 lowercase text-lg border-b-zinc-300 transition-all border-b-2 hover:text-zinc-600 dark:hover:text-zinc-100 hover:border-opacity-50 ${
+                    className={`box-content p-0 lowercase text-lg border-b-zinc-500 transition-all border-b-2 hover:text-black dark:hover:text-zinc-100 hover:border-opacity-50 ${
                         pathname === link.href ? 'border-opacity-100' : 'border-opacity-0'
                     }`}
                 >

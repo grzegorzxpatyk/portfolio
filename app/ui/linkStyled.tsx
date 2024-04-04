@@ -7,7 +7,7 @@ export default function LinkStyled(
     return (
         <Link
             {...props}
-            className={`group inline-flex justify-between items-center hover:text-zinc-600 dark:hover:text-zinc-100 ${props.className}`}
+            className={`group inline-flex justify-between items-center hover:text-black dark:hover:text-zinc-100 ${props.className}`}
         >
             {props.children}
             {props.target === '_blank' && (
