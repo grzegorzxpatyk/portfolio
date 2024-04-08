@@ -15,7 +15,7 @@ export default function Home() {
                     a trained architect turned programmer. I specialize in
                     crafting user interfaces and implementing designs that
                     enhance web experiences. Outside of work, I enjoy
-                    woodworking, exploring nature, and spending time with my
+                    woodworking, photography, and spending time with my
                     dogs.
                 </p>
             </div>
