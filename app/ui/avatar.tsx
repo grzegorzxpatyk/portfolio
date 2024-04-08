@@ -21,8 +21,6 @@ export default function Avatar() {
     function setAvatarTrasform({ xVal, yVal }: { [key: string]: number }) {
         if (!avatarRef.current) return;
 
-        console.log(xVal, yVal);
-
         const height = avatarRef.current.height;
         const width = avatarRef.current.width;
 
