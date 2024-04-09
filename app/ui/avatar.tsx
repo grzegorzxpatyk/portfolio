@@ -41,10 +41,10 @@ export default function Avatar() {
         const shadowX = (-xVal + 100) / 6;
         const shadowY = (-yVal + 100) / 6;
 
-        avatarRef.current.style.boxShadow = `${shadowX}px ${shadowY}px 0px ${
+        avatarRef.current.style.boxShadow = `${shadowX}px ${shadowY}px 1px ${
             colors.blue[500]
         }66, 
-        ${shadowX * 2}px ${shadowY * 2}px 0px ${colors.red[500]}33`;
+        ${shadowX * 2}px ${shadowY * 2}px 2px ${colors.red[500]}33`;
     }
 
     function handleMouseOut(e: React.MouseEvent<HTMLImageElement>) {
