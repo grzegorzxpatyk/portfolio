@@ -8,7 +8,9 @@ import colors from 'tailwindcss/colors';
 export default function Avatar() {
     const avatarRef = useRef<HTMLImageElement | null>(null);
 
-    function handleMouseMove(e: React.MouseEvent<HTMLImageElement>) {
+    function handleMouseMove(
+        e: React.MouseEvent<HTMLImageElement> | MouseEvent
+    ) {
         if (!avatarRef.current) return;
 
         const avatarRect = avatarRef.current.getBoundingClientRect();
@@ -57,33 +59,17 @@ export default function Avatar() {
     }
 
     useEffect(() => {
-        setTimeout(() => {}, 1000);
-        let counter = 0;
-        const avatarAnimation = setInterval(() => {
-            if (counter >= 3) {
-                resetAvatarTransform();
-                clearInterval(avatarAnimation);
-            } else {
-                switch (counter) {
-                    case 0:
-                        setAvatarTrasform({ xVal: 25, yVal: 18 });
-                        break;
-                    case 1:
-                        setAvatarTrasform({ xVal: 180, yVal: 15 });
-                        break;
-                    case 2:
-                        setAvatarTrasform({ xVal: 23, yVal: 191 });
-                        break;
-                    default:
-                        resetAvatarTransform();
-                        break;
-                }
-                counter++;
-            }
-        }, 1500);
-        return () => {
-            clearInterval(avatarAnimation);
-        };
+        setTimeout(() => setAvatarTrasform({ xVal: 25, yVal: 18 }), 1500);
+        setTimeout(() => setAvatarTrasform({ xVal: 180, yVal: 15 }), 2500);
+        setTimeout(() => setAvatarTrasform({ xVal: 23, yVal: 191 }), 3000);
+        setTimeout(() => {
+            resetAvatarTransform();
+            avatarRef?.current?.addEventListener('mousemove', (e) => {
+                handleMouseMove(e);
+            });
+        }, 3500);
+
+        return () => {};
     }, []);
 
     return (
@@ -93,9 +79,8 @@ export default function Avatar() {
             width={200}
             height={200}
             alt='My portrait.'
-            className='sm:row-span-2 rounded-lg transition-all duration-500 ease-in-out hover:transition-transform hover:duration-100 hover:ease-linear'
+            className='sm:row-span-2 rounded-lg transition-all duration-500 ease-[cubic-bezier(0.69,-0.86,0.13,1.85)] hover:transition-transform hover:duration-100 hover:ease-linear'
             placeholder='blur'
-            onMouseMove={handleMouseMove}
             onMouseOut={handleMouseOut}
         />
     );
