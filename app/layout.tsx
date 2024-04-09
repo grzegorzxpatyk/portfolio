@@ -18,7 +18,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang='en' className='cursor-crosshair'>
+        <html lang='en' className='cursor-crosshair scrollbar-stable'>
             <body className={`${GeistSans.className} antialiased mx-auto max-w-2xl text-zinc-900 bg-zinc-100 dark:text-zinc-300 dark:bg-zinc-900`}>
                 <main className='flex h-fit flex-col items-center justify-start mt-2 lg:mt-8 p-8 min-w-0'>
                     <Navigation />
