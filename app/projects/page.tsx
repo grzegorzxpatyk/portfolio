@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { Suspense } from 'react';
 import { ProjectsSkeleton } from '../ui/skeletons';
-import Projects from '../ui/projectList';
+import ProjectList from '../ui/projectList';
 
 export const metadata: Metadata = {
     title: 'Projects',
@@ -15,7 +15,7 @@ export default async function Page() {
                 my projects
             </h2>
             <Suspense fallback={<ProjectsSkeleton />}>
-                <Projects />
+                <ProjectList />
             </Suspense>
         </section>
     );

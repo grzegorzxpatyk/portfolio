@@ -3,7 +3,7 @@ import LinkStyled from './linkStyled';
 
 export const revalidate = 3600;
 
-export default async function Projects() {
+export default async function ProjectList() {
     const pinnedRepos = await getPinnedRepos();
     
     return (
