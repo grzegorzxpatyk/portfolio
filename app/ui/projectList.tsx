@@ -1,4 +1,4 @@
-import { getPinnedRepos } from '../utils';
+import { getPinnedRepos } from '../lib/data';
 import LinkStyled from './linkStyled';
 
 export const revalidate = 3600;
