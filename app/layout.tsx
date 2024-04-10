@@ -5,11 +5,11 @@ import Navigation from './ui/nav';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Grzegorz Patyk',
-    template: '%s | Grzegorz Patyk',
+    default: 'Greg Patyk',
+    template: '%s | Greg Patyk',
   },
     description: 'Portfolio of my web development projects and photography.',
-    authors: { name: 'Grzegorz Patyk', url: 'https://gpatyk.dev'},
+    authors: { name: 'Greg Patyk', url: 'https://gpatyk.dev'},
 };
 
 export default function RootLayout({
