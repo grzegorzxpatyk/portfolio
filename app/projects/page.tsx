@@ -8,6 +8,8 @@ export const metadata: Metadata = {
     description: 'My web development projects.',
 };
 
+export const revalidate = 3600;
+
 export default async function Page() {
     return (
         <section className='w-full flex flex-col items-start'>
