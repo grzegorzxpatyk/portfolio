@@ -23,7 +23,11 @@ export default function ProjectCard({
                     {name}
                 </LinkStyled>
                 <div className='flex flex-row items-start justify-end gap-2'>
-                    <LinkButton href={url} target='_blank'>
+                    <LinkButton
+                        href={url}
+                        target='_blank'
+                        className='hidden sm:block'
+                    >
                         Repo
                     </LinkButton>
                     {homepageUrl && (
