@@ -19,11 +19,13 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='en' className='cursor-crosshair scrollbar-stable'>
-            <body className={`${GeistSans.className} antialiased mx-auto max-w-2xl text-zinc-900 bg-zinc-100 dark:text-zinc-300 dark:bg-zinc-900`}>
-                <main className='flex h-fit flex-col items-center justify-start mt-2 lg:mt-8 p-8 min-w-0'>
+            <body
+                className={`${GeistSans.className} mx-auto max-w-2xl bg-zinc-100 text-zinc-900 antialiased dark:bg-zinc-900 dark:text-zinc-300`}
+            >
+                <div className='mt-2 flex h-fit min-w-0 flex-col items-center justify-start p-8 lg:mt-8'>
                     <Navigation />
                     {children}
-                </main>
+                </div>
             </body>
         </html>
     );
