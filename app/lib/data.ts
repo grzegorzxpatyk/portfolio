@@ -11,6 +11,7 @@ export type pinnedRepo = {
     id: string;
     name: string;
     url: string;
+    homepageUrl: string;
     languages: string[];
     description: string;
 };
@@ -62,6 +63,7 @@ export async function requestPinnedRepos() {
                                     name
                                     url
                                     description
+                                    homepageUrl
                                     languages(first: 6) {
                                         edges {
                                             node {
