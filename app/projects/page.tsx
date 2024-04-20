@@ -12,8 +12,8 @@ export const revalidate = 3600;
 
 export default async function Page() {
     return (
-        <section className='w-full flex flex-col items-start'>
-            <h2 className='text-3xl text-black dark:text-white mb-4'>
+        <section className='flex w-full flex-col items-start'>
+            <h2 className='mb-8 text-3xl text-black dark:text-white'>
                 my projects
             </h2>
             <Suspense fallback={<ProjectsSkeleton />}>
