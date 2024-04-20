@@ -1,18 +1,26 @@
 export function ProjectsSkeleton() {
     return (
-        <ul className='flex flex-col justify-evenly items-start animate-pulse'>
+        <ul className='flex w-full animate-pulse flex-col items-start justify-evenly'>
             {[...Array(6)].map((el, i) => (
-                <li className='mb-4 h-fit' key={i}>
-                    <span className='block w-20 h-5 mt-[4px] mb-[8px] bg-zinc-500'></span>
-                    <span className='block w-48 h-4 mb-[7px] bg-zinc-500'></span>
-                    <span className='w-fit flex flex-row gap-x-1 gap-y-0 h-3.5 mb-[3px]'>
-                        {[...Array(5)].map((el, j) => (
-                            <span
-                                key={`${i}-${j}`}
-                                className='inline-block w-16 h-full bg-zinc-500'
-                            ></span>
-                        ))}
-                    </span>
+                <li className='mb-8 h-fit w-full' key={i}>
+                    <div className='w-full rounded-xl border border-zinc-400 p-4 shadow-[10px_10px_0] shadow-zinc-600 transition-transform duration-200 ease-in-out hover:scale-105 dark:border-zinc-700 dark:shadow-zinc-950'>
+                        <div className='mb-[19px] flex w-full flex-row items-start justify-between'>
+                            <span className='mb-[8px] mt-[4px] block h-6 w-28 bg-zinc-500'></span>
+                            <div className='flex flex-row items-center justify-end gap-2'>
+                                <span className='h-[32px] w-[60px] rounded bg-zinc-500'></span>
+                                <span className='h-[32px] w-[60px] rounded bg-zinc-500'></span>
+                            </div>
+                        </div>
+                        <span className='mb-[8px] block h-5 w-[70%] bg-zinc-500'></span>
+                        <span className='mb-[3px] flex h-3.5 w-fit flex-row gap-x-1 gap-y-0'>
+                            {[...Array(5)].map((el, j) => (
+                                <span
+                                    key={`${i}-${j}`}
+                                    className='inline-block h-full w-16 bg-zinc-500'
+                                ></span>
+                            ))}
+                        </span>
+                    </div>
                 </li>
             ))}
         </ul>
