@@ -1,5 +1,5 @@
-import type { Config } from "tailwindcss";
-import { scrollbarGutter } from "tailwind-scrollbar-utilities";
+import type { Config } from 'tailwindcss';
+import { scrollbarGutter } from 'tailwind-scrollbar-utilities';
 
 const config: Config = {
     content: [

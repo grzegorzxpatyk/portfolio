@@ -10,6 +10,6 @@ test('test navigating between pages', async ({ page }) => {
     await page.getByRole('link', { name: 'projects' }).click();
     await expect(page).toHaveTitle(/Projects/);
 
-    await page.getByRole('link', {name: 'photography'}).click();
+    await page.getByRole('link', { name: 'photography' }).click();
     await expect(page).toHaveTitle(/Photography/);
 });

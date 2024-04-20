@@ -16,5 +16,7 @@ test('resume link is working', async ({ page }) => {
     const newTab = await newTabPromise;
     const newTabLocation = await newTab.evaluate('location.href');
 
-    await expect(newTabLocation).toBe('https://grzegorzxpatyk.github.io/resume/');
+    await expect(newTabLocation).toBe(
+        'https://grzegorzxpatyk.github.io/resume/'
+    );
 });
