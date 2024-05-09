@@ -1,4 +1,4 @@
-import { getPinnedRepos } from '../lib/data';
+import { getPinnedRepos } from '../app/lib/data';
 import ProjectCard from './projectCard';
 
 export default async function ProjectList() {

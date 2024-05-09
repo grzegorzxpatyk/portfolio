@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import Portrait from '../lib/avatar.png';
+import Portrait from '@/app/lib/avatar.png';
 import { useEffect, useRef } from 'react';
 import colors from 'tailwindcss/colors';
 

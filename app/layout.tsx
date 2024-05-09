@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import './globals.css';
-import Navigation from './ui/nav';
+import Navigation from '../components/nav';
 
 export const metadata: Metadata = {
     title: {
