@@ -1,6 +1,8 @@
+import Link from 'next/link';
 import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
 import LinkStyled from '../components/linkStyled';
 import Avatar from '../components/avatar';
+import { CustomButton } from '@/components/customButton';
 
 export default function Home() {
     return (
@@ -23,12 +25,15 @@ export default function Home() {
                 <h2 className='inline text-lg'>Interested in hiring me?</h2>{' '}
                 <span className='whitespace-nowrap'>
                     Checkout my{' '}
-                    <LinkStyled
+                    <Link
                         href='https://grzegorzxpatyk.github.io/resume/'
                         target='_blank'
+                        passHref
                     >
-                        resume
-                    </LinkStyled>
+                        <CustomButton className='mx-3 h-auto px-3 py-2'>
+                            resume
+                        </CustomButton>
+                    </Link>
                 </span>
             </div>
 
