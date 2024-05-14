@@ -22,7 +22,7 @@ export default function RootLayout({
             <body
                 className={`${GeistSans.className} mx-auto max-w-2xl bg-zinc-100 text-zinc-900 antialiased dark:bg-zinc-900 dark:text-zinc-300`}
             >
-                <div className='mt-2 flex h-fit min-w-0 flex-col items-center justify-start p-8 lg:mt-8'>
+                <div className='mt-2 flex h-fit min-w-0 flex-col items-center justify-start p-8 pb-20 lg:mt-8 lg:pb-6'>
                     <Navigation />
                     {children}
                 </div>

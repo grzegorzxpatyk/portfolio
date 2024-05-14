@@ -79,7 +79,7 @@ export default function Avatar() {
             width={200}
             height={200}
             alt='My portrait.'
-            className='rounded-lg transition-all duration-500 ease-[cubic-bezier(0.69,-0.86,0.13,1.85)] hover:transition-transform hover:duration-100 hover:ease-linear sm:row-span-2'
+            className='row-span-2 rounded-lg transition-all duration-500 ease-[cubic-bezier(0.69,-0.86,0.13,1.85)] hover:transition-transform hover:duration-100 hover:ease-linear'
             placeholder='blur'
             onMouseOut={handleMouseOut}
         />
