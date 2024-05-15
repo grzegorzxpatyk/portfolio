@@ -12,7 +12,7 @@ export default function Error({
     return (
         <div>
             <h2>Something went wrong!</h2>
-            <Button onClick={() => reset()}>Try again</Button>
+            <Button onPress={() => reset()}>Try again</Button>
         </div>
     );
 }

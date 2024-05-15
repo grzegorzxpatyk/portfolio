@@ -13,7 +13,7 @@ export default function GlobalError({
         <html>
             <body>
                 <h2>Something went wrong!</h2>
-                <Button onClick={() => reset()}>Try again</Button>
+                <Button onPress={() => reset()}>Try again</Button>
             </body>
         </html>
     );
