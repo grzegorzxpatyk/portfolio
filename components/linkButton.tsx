@@ -1,12 +1,10 @@
-import Link from 'next/link';
-import Button from './button';
+import Link, { LinkProps } from 'next/link';
+import Button from '@/components/button';
+import { ButtonProps } from 'react-aria-components';
 
-type LinkButtonProps = Omit<React.JSX.IntrinsicElements['button'], 'type'> & {
-    href: string;
-    className?: string;
-    children: React.ReactNode;
-    target?: React.HTMLAttributeAnchorTarget;
-};
+type LinkButtonProps = ButtonProps &
+    LinkProps &
+    React.AllHTMLAttributes<HTMLAnchorElement>;
 
 export default function LinkButton({
     href,
