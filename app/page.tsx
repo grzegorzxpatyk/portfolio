@@ -1,6 +1,6 @@
 import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
-import LinkStyled from './ui/linkStyled';
-import Avatar from './ui/avatar';
+import LinkStyled from '../components/linkStyled';
+import Avatar from '../components/avatar';
 
 export default function Home() {
     return (
