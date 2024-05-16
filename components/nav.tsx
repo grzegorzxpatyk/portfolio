@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 const links = [
     { name: 'Home', href: '/' },
@@ -18,13 +19,20 @@ export default function Navigation() {
                 <Link
                     href={link.href}
                     key={link.name}
-                    className={`box-content border-b-2 border-b-zinc-500 p-0 text-lg lowercase transition-all hover:border-opacity-50 hover:text-black dark:hover:text-zinc-100 ${
-                        pathname === link.href
-                            ? 'border-opacity-100'
-                            : 'border-opacity-0'
-                    }`}
+                    className='relative p-0 text-lg lowercase transition-all hover:text-black dark:hover:text-zinc-100'
                 >
                     {link.name}
+                    {pathname === link.href && (
+                        <motion.span
+                            layoutId='navlink-underline'
+                            transition={{
+                                type: 'spring',
+                                stiffness: 500,
+                                damping: 30,
+                            }}
+                            className='absolute left-0 top-full block h-[2px] w-full bg-zinc-800 dark:bg-zinc-500'
+                        />
+                    )}
                 </Link>
             ))}
         </nav>
