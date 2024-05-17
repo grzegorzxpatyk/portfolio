@@ -41,7 +41,7 @@ export function RippleContainer({ duration }: { duration: number }) {
         setRippleArray([]);
     });
 
-    const addRipple = (event: MouseEvent<HTMLDivElement>) => {
+    function addRipple(event: MouseEvent<HTMLDivElement>) {
         const { width, height, left, top } =
             event.currentTarget.getBoundingClientRect();
         const size = width > height ? width : height;
