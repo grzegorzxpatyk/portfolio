@@ -2,17 +2,26 @@
 
 import clsx from 'clsx';
 import { Button as ReactAriaButton, ButtonProps } from 'react-aria-components';
+import { RippleContainer } from './ripples';
 
-export default function Button({ className, children, ...props }: ButtonProps) {
+export default function Button({
+    className,
+    children,
+    hasRipples = false,
+    ...props
+}: ButtonProps & { hasRipples?: boolean }) {
     return (
         <ReactAriaButton
             className={clsx(
-                'inline-flex items-center justify-center rounded border border-zinc-400 bg-zinc-50 px-2 py-1 text-base font-medium text-zinc-900 shadow-lg shadow-zinc-600/20 transition-all hover:bg-zinc-200 hover:shadow-none data-[pressed]:scale-95 data-[pressed]:bg-zinc-200 data-[pressed]:shadow-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800 dark:data-[pressed]:bg-zinc-800 ',
+                'relative overflow-hidden rounded border border-zinc-400 bg-zinc-50 px-4 py-2 text-base font-medium text-zinc-900 shadow-lg shadow-zinc-600/20 transition-all data-[hovered]:bg-zinc-200 data-[hovered]:shadow-none data-[pressed]:shadow-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:data-[hovered]:bg-zinc-800',
+                !hasRipples &&
+                    'data-[pressed]:bg-zinc-300 dark:data-[pressed]:bg-zinc-700',
                 className
             )}
             {...props}
         >
-            {children}
+            <>{children}</>
+            {hasRipples && <RippleContainer duration={1000} />}
         </ReactAriaButton>
     );
 }
