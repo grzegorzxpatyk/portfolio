@@ -53,8 +53,6 @@ export function RippleContainer({ duration }: { duration: number }) {
             size,
         };
 
-        console.log({ ...newRipple }, event.clientX, event.clientY);
-
         setRippleArray([...rippleArray, newRipple]);
     };
 
