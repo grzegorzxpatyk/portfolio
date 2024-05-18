@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { Suspense } from 'react';
-import { ProjectsSkeleton } from '../../components/skeletons';
-import ProjectList from '../../components/projectList';
+import { ProjectsSkeleton } from '@/components/Skeletons/Skeletons';
+import ProjectList from '@/components/ProjectList/ProjectList';
 
 export const metadata: Metadata = {
     title: 'Projects',
