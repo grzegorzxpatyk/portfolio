@@ -2,7 +2,7 @@
 
 import clsx from 'clsx';
 import { Button as ReactAriaButton, ButtonProps } from 'react-aria-components';
-import { RippleContainer } from './ripples';
+import { RippleContainer } from '@/components/Ripples/Ripples';
 
 export default function Button({
     className,

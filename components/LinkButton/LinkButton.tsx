@@ -1,5 +1,5 @@
 import Link, { LinkProps } from 'next/link';
-import Button from '@/components/button';
+import Button from '@/components/Button/Button';
 import { ButtonProps } from 'react-aria-components';
 
 type LinkButtonProps = ButtonProps &
