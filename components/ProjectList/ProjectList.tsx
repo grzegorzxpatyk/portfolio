@@ -1,5 +1,5 @@
-import { getPinnedRepos } from '../app/lib/data';
-import ProjectCard from './projectCard';
+import { getPinnedRepos } from '@/app/lib/data';
+import ProjectCard from '@/components/ProjectCard/ProjectCard';
 
 export default async function ProjectList() {
     const pinnedRepos = await getPinnedRepos();

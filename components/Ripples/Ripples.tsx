@@ -1,35 +1,7 @@
 'use client';
 
-import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { AriaButtonProps } from '@react-aria/button';
-import { PressEvent } from '@react-aria/interactions';
 import { MouseEvent, useLayoutEffect, useState } from 'react';
-import { Button } from 'react-aria-components';
-
-export default function CustomButton({
-    children,
-    className,
-    ...props
-}: AriaButtonProps & { className?: string }) {
-    function handlePress(event: PressEvent) {
-        event.target;
-    }
-
-    return (
-        <Button
-            className={clsx(
-                'relative overflow-hidden rounded border border-zinc-400 bg-zinc-50 px-2 py-1 text-base font-medium text-zinc-900 shadow-lg shadow-zinc-600/20 transition-all data-[hovered]:bg-zinc-200 data-[hovered]:shadow-none data-[pressed]:shadow-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:data-[hovered]:bg-zinc-800',
-                className
-            )}
-            onPress={handlePress}
-            {...props}
-        >
-            {children}
-            <RippleContainer duration={1000} />
-        </Button>
-    );
-}
 
 export function Ripple({
     coords,
@@ -60,7 +32,7 @@ export function Ripple({
     );
 }
 
-function RippleContainer({ duration }: { duration: number }) {
+export function RippleContainer({ duration }: { duration: number }) {
     const [rippleArray, setRippleArray] = useState<
         { x: number; y: number; size: number }[]
     >([]);
@@ -69,7 +41,7 @@ function RippleContainer({ duration }: { duration: number }) {
         setRippleArray([]);
     });
 
-    const addRipple = (event: MouseEvent<HTMLDivElement>) => {
+    function addRipple(event: MouseEvent<HTMLDivElement>) {
         const { width, height, left, top } =
             event.currentTarget.getBoundingClientRect();
         const size = width > height ? width : height;
@@ -80,8 +52,6 @@ function RippleContainer({ duration }: { duration: number }) {
             y,
             size,
         };
-
-        console.log({ ...newRipple }, event.clientX, event.clientY);
 
         setRippleArray([...rippleArray, newRipple]);
     };

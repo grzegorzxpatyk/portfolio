@@ -1,5 +1,5 @@
-import LinkButton from './linkButton';
-import LinkStyled from './linkStyled';
+import LinkButton from '@/components/LinkButton/LinkButton';
+import LinkStyled from '@/components/LinkStyled/LinkStyled';
 
 type ProjectCardProps = {
     name: string;
