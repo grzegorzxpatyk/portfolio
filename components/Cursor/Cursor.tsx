@@ -12,6 +12,10 @@ export default function Cursor({ children }: { children: React.ReactNode }) {
         leaveDelay: 100,
     });
 
+    if (mouse.isTouch) {
+        return;
+    }
+
     let x = -size;
     let y = -size;
 
