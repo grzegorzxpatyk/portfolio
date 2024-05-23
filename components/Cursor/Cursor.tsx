@@ -1,63 +1,60 @@
 'use client';
 
-import useMouse from '@react-hook/mouse-position';
-import { motion } from 'framer-motion';
-import { useRef } from 'react';
+import { useEffect, useState } from 'react';
+import {
+    motion,
+    SpringOptions,
+    useMotionValue,
+    useSpring,
+} from 'framer-motion';
 
-export default function Cursor({ children }: { children: React.ReactNode }) {
-    const ref = useRef(null);
-    const size = 80;
-    const mouse = useMouse(ref, {
-        enterDelay: 100,
-        leaveDelay: 100,
-    });
-
-    if (mouse.isTouch) {
-        return;
-    }
-
-    let x = -size;
-    let y = -size;
-
-    if (mouse.clientX !== null) {
-        x = mouse.clientX;
-    }
-
-    if (mouse.clientY !== null) {
-        y = mouse.clientY;
-    }
-
-    const variants = {
-        active: {
-            opacity: 1,
-            x: x - size / 2,
-            y: y - size / 2,
-            width: size,
-            height: size,
-        },
-        hidden: {
-            opacity: 0,
-        },
+export default function Cursor() {
+    const size = 30;
+    const [clicked, setClicked] = useState(false);
+    const mouse = {
+        x: useMotionValue(0),
+        y: useMotionValue(0),
     };
 
+    const springConfig: SpringOptions = {
+        damping: 20,
+        stiffness: 300,
+        mass: 0.5,
+    };
+    const smoothMouse = {
+        x: useSpring(mouse.x, springConfig),
+        y: useSpring(mouse.y, springConfig),
+    };
+
+    const manageMouseMove = (e: MouseEvent) => {
+        const { clientX, clientY } = e;
+        mouse.x.set(clientX - size / 2);
+        mouse.y.set(clientY - size / 2);
+    };
+
+    useEffect(() => {
+        window.addEventListener('mousemove', manageMouseMove);
+        window.addEventListener('click', (event: MouseEvent) => {
+            setClicked(true);
+            setTimeout(() => setClicked(false), 300);
+        });
+        return () => {
+            window.removeEventListener('mousemove', manageMouseMove);
+        };
+    }, []);
+
     return (
-        <div
-            className='fixed inset-0 h-dvh w-dvw select-none overflow-auto bg-transparent'
-            ref={ref}
-        >
-            {children}
+        <div>
             <motion.div
-                className='pointer-events-none fixed left-0 top-0 flex animate-pulse select-none items-center justify-center rounded-full border border-zinc-900/50 dark:border-zinc-200/50'
-                variants={variants}
-                animate='active'
-                initial='hidden'
-                exit='hidden'
-                transition={{
-                    type: 'spring',
-                    stiffness: 400,
-                    damping: 25,
-                    mass: 0.6,
+                style={{
+                    left: smoothMouse.x,
+                    top: smoothMouse.y,
+                    height: size,
+                    width: size,
+                    backdropFilter: `invert(0.9) ${clicked ? 'blur(1.5px)' : 'blur(0)'}`,
+                    transition: 'backdrop-filter 100ms ease-in',
                 }}
+                className='pointer-events-none fixed rounded-full'
             ></motion.div>
         </div>
     );
