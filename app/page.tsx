@@ -1,6 +1,7 @@
 import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
 import LinkStyled from '@/components/LinkStyled/LinkStyled';
-import Avatar from '@/components/Avatar/Avatar';
+import Portrait from '@/app/lib/avatar.png';
+import Image from 'next/image';
 
 export default function Home() {
     return (
@@ -10,7 +11,14 @@ export default function Home() {
                     Hello there!{' '}
                     <span className='whitespace-nowrap'>I am Greg 👋</span>
                 </h1>
-                <Avatar />
+                <Image
+                    src={Portrait}
+                    width={200}
+                    height={200}
+                    alt='My portrait.'
+                    className='row-span-2 rounded-lg'
+                    placeholder='blur'
+                />
                 <p className='text-justify text-base sm:col-span-2'>
                     a trained architect turned programmer. I specialize in
                     crafting user interfaces and implementing designs that
