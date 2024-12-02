@@ -9,8 +9,11 @@ export const metadata: Metadata = {
         default: 'Greg Patyk',
         template: '%s | Greg Patyk',
     },
-    description: 'Portfolio of my web development projects and photography.',
+    description:
+        'Grzegorz Patyk - frontend developer. Portfolio of web development projects and photography.',
     authors: { name: 'Greg Patyk', url: 'https://gpatyk.dev' },
+    keywords:
+        'Greg Patyk, Grzegorz Patyk, Grzegorz Patyk Frontend, Grzegorz Patyk Developer, Grzegorz Patyk Frontend Developer, Grzegorz Patyk Portfolio',
 };
 
 export default function RootLayout({
